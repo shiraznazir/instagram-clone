@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import img1 from './images/Instagram-Logo.png';
+import Post from './Post';
 
 function App() {
+
+  const [ posts, setPosts ] = useState([
+    {
+      username="shahzadasaleem" ,
+      caption="wow it's works" ,
+      imageURl="./images/forest.jpg" 
+    },
+    {
+      username="shiraznazir",
+      caption="wow it's so wonderful",
+      imageURl="./images/forest.jpg"
+    },
+    {
+      username="farhatjahan",
+      caption="wow it's so nice",
+      imageURl="./images/forest.jpg"
+    }
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="app__header">
+          <img
+            className="app__headerImage"
+            src={ img1 }
+            alt=""
+            />
+        </div>
+        
+        <h1>Hello guys we are going to build a instagram clone !</h1>
+        <Post username="shahzadasaleem" caption="wow it's works" imageURl="./images/forest.jpg" />
+        <Post username="shiraznazir" caption="wow it's so wonderful" imageURl="./images/forest.jpg"/>
+        <Post username="farhatjahan" caption="wow it's so nice" imageURl="./images/forest.jpg"/>
+        <Post username="Sohanpalsingh" caption="wow it's so nice" imageURl="./images/forest.jpg" />
+        
     </div>
   );
 }
